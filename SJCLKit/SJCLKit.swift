@@ -22,11 +22,11 @@ public class SJCL {
         base64 = js?.objectForKeyedSubscript("toBits")
     }
     
-    public func encrypt(password: String, plaintext: String, params: Any) -> String {
+    public func encrypt(password: Any, plaintext: String, params: Any) -> String {
         return self.encrypt?.call(withArguments: [password, plaintext, params]).toString() ?? ""
     }
     
-    public func decrypt(password: String, ciphertext: String, params: Any) -> String {
+    public func decrypt(password: Any, ciphertext: String, params: Any) -> String {
         return self.decrypt?.call(withArguments: [password, ciphertext, params]).toString() ?? ""
     }
     
